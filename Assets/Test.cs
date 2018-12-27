@@ -39,7 +39,7 @@ public class boss
     public void Magic()
     {
         //ifを使ってmp
-        if (mp > 5) {
+        if (mp >= 5) {
 
             mp -= 5;
             Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
