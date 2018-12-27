@@ -9,26 +9,16 @@ public class Test : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        int[] array = { 10, 20, 30, 40, 50 };
-        for (int i = 0; i < array.Length; i++)
-        {
-            if (array[i] >= 10)
-            {
-                Debug.Log(array[i]);
-            }
-
-
-        }
-        for (int i = array.Length - 1; i > -1; i--)
-        {
-            Debug.Log(array[i]);
-        }
-
+         
          // Bossクラスの変数を宣言してインスタンスを代入
-         Boss boss = new Boss();
+        boss boss = new boss();
 
-         // magicの関数を呼び出す
-         boss.Magic();
+        for (int i = 0; i < 11; i++) {
+            // magicの関数を呼び出す
+            boss.Magic();
+        }
+
+
 
         
 
@@ -41,24 +31,28 @@ public class Test : MonoBehaviour
     }
 }
 
-public class Boss
+public class boss
 {
     private int mp = 53;
 
     // magic用の関数
     public void Magic()
     {
-        Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
-    }
-    //減らす関数
-    public void Defence(int damage){
-        Debug.Log(damage + "MPが足りないため魔法が使えない。");
-        this.mp -= damage;
+        //ifを使ってmp
+        if (mp > 5) {
+
+            mp -= 5;
+            Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
+
+        }else{
+            Debug.Log("MPが足りないため魔法が使えない。");
+
+        }
     }
 
 }
 
-public class test : MonoBehaviour
-{
 
-}
+
+
+
